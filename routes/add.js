@@ -27,7 +27,6 @@ router.post("/", auth, clothesValidators, async (req, res) => {
 				img: req.body.img,
 			},
 		});
-		console.log();
 	}
 
 	const clothe = new Clothes({
