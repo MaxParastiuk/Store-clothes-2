@@ -1,0 +1,59 @@
+<h1>Edit page</h1>
+<form action="/clothes/edit" method="POST" class="clothes__form">
+	<div class="input-field">
+		<input
+			name="name"
+			id="title"
+			type="text"
+			class="validate"
+			required
+			value="{{item.title}}"
+		/>
+		<label for="title">Name item</label>
+		<span
+			class="helper-text"
+			data-error="enter name"
+			data-success="right"
+		>Helper text</span>
+	</div>
+	<div class="input-field">
+		<input
+			name="price"
+			id="price"
+			type="text"
+			class="validate"
+			required
+			min="1"
+			value="{{item.price}}"
+		/>
+		<label for="price">Price</label>
+		<span
+			class="helper-text"
+			data-error="enter price"
+			data-success="right"
+		>Helper text</span>
+	</div>
+	<div class="input-field">
+		<input
+			name="img"
+			id="img"
+			type="text"
+			class="validate"
+			required
+			value="{{item.img}}"
+		/>
+		<label for="img">URL img</label>
+		<span class="helper-text" data-error="enter url" data-success="right">Helper
+			text</span>
+	</div>
+
+	<input type="hidden" name="id" value="{{item.id}}" />
+	<input type="hidden" name="_csrf" value="{{csrf}}" />
+
+	<button class="btn btn-primary" type="submit">Edit item</button>
+</form>
+<form action="/clothes/remove" method="POST">
+	<input type="hidden" name="_csrf" value="{{csrf}}" />
+	<input type="hidden" name="id" value="{{item.id}}" />
+	<button class="btn red">Delete</button>
+</form>
