@@ -47,7 +47,7 @@ const store = new MongoStore({
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
-app.set("views", "views");
+app.set("views", __dirname);
 
 // app.use(async (req, res, next) => {
 // 	try {
